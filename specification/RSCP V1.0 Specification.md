@@ -1,6 +1,6 @@
 # Really Smart Calculator Protocol V1.0 Spécification
 
-    Author              : Yann Malherbe, Cédric Rudareanu, HEIG-VD
+    Author              : Yann Malherbe, Cédric Rudareanu
     Last revision date  : 21.03.2014
 
     Revision history
@@ -52,20 +52,18 @@ Une fois l'authentification établie, des messages standard de type
 requête/réponse transitent entre le Smart Calculator et le serveur comme
 ci-dessous.
 
-Client----[Requête]----\>Server
+Client----[Requête]---->Server
 
-Client\<---[Reponse]-----Server
+Client<---[Reponse]-----Server
 
 ## Architecture du système
 
 Ci-dessous l'architecture du système de communication entre le client et
 le serveur.
 
-|-------| |---------|
-
-| Client | \<-------------\>| Server |
-
-|-------| |---------|
+|---------|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----------|<br/>
+| Client |<------------->| Server |<br/>
+|---------| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|----------|
 
 ## Composants du système
 
@@ -73,9 +71,9 @@ Il y a deux composants dans ce système, le client et le serveur.
 
 ### Client
 
-Le client est une machine qui a le système "Smart Calculator" est qui
+Le client est une machine qui a le système "Smart Calculator" et qui
 communique avec un serveur. Le système a pour but de proposer diverses
-opérations mathématique ou autre possibles. Lors de la sélection d'une
+opérations mathématique ou autres possibilités. Lors de la sélection d'une
 de ces dernières alors la machine va envoyer les informations à un
 serveur distant afin que les calculs soit effectué sur celui-ci. Une
 fois le calcul effectuer le serveur retourne le résultat et ainsi le
@@ -93,47 +91,47 @@ requiert avant tout que le client s'authentifie auprès du serveur.
 
 Ci dessous les différentes interactions entre le client et le serveur.
 
-Client Server
+Client&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Server
 
- | 1 Connection demand |
+ &nbsp;&nbsp;&nbsp;&nbsp;| 1 Connection demand &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- |----------------------------\>|
+  &nbsp;&nbsp;&nbsp;&nbsp;|---------------------------------->|
 
- | |
+  &nbsp;&nbsp;&nbsp;&nbsp;|  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- | 2 Authentification request |
+  &nbsp;&nbsp;&nbsp;&nbsp;| 2 Authentification request &nbsp;&nbsp;|
 
- |\<----------------------------|
+  &nbsp;&nbsp;&nbsp;&nbsp;|<----------------------------------|
 
- | |
+  &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 
- | 3 Authentification response |
+  &nbsp;&nbsp;&nbsp;&nbsp;| 3 Authentification response |
 
- |----------------------------\>|
+  &nbsp;&nbsp;&nbsp;&nbsp;|---------------------------------->|
 
- | |
+  &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- | 4 Connection status |
+  &nbsp;&nbsp;&nbsp;&nbsp;| 4 Connection status &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- |\<----------------------------|
+  &nbsp;&nbsp;&nbsp;&nbsp;|<---------------------------------|
 
- | |
+  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- | 5 Operation request |
+  &nbsp;&nbsp;&nbsp;&nbsp;| 5 Operation request &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- |----------------------------\>|
+  &nbsp;&nbsp;&nbsp;&nbsp;|--------------------------------->|
 
- | |
+  &nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- | 6 Operation response |
+  &nbsp;&nbsp;&nbsp;&nbsp;| 6 Operation response &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- |\<----------------------------|
+  &nbsp;&nbsp;&nbsp;&nbsp;|<---------------------------------|
 
- | |
+  &nbsp;&nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- | 7 Disconnect |
+  &nbsp;&nbsp;&nbsp;&nbsp;| 7 Disconnect &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 
- |----------------------------\>|
+  &nbsp;&nbsp;&nbsp;&nbsp;|---------------------------------->|
 
 Le message 1 est la demande de connexion du client vers le serveur.
 
