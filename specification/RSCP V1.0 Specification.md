@@ -42,7 +42,6 @@
 - [Exemples](#exemples)
 	- [Connexion au serveur ouvert, liste les fonctions et en exécute une](#connexion-au-serveur-ouvert-liste-les-fonctions-et-en-exécute-une)
 	- [Connexion à un serveur privé et création d'un compte](#connexion-à-un-serveur-privé-et-création-dun-compte)
-- [Références](#références)
 
 # Introduction
 Le protocole RSCP (Really Smart Calculator Protocol) permet une
@@ -244,6 +243,3 @@ S> "AUTHENTIFICATION CREATE SUCCESS"<br />
 C> "AUTHENTIFICATION LOGIN:USERNAME=dias:PASSWORD=pompier"<br />
 S> "AUTHENTIFICATION SUCCESSFUL"<br />
 C> "DISCONNECT"
-
-# Références
-Pour la découverte de serveur 
